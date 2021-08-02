@@ -1,21 +1,12 @@
 import React from 'react';
-import { makeStyles, Typography, IconButton } from '@material-ui/core';
-import { Shop } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core';
+import Header from './components/Header/Header';
 
 const useStyles = makeStyles({
   container: {
-    backgroundColor: 'red',
-  },
-  title: {
-    fontSize: '20px',
-    color: 'blue',
-  },
-  button: {
-    backgroundColor: 'green',
-  },
-  icon: {
-    color: 'pink',
-  },
+    width: '1140px',
+    margin: '0 auto',
+  }
 });
 
 const App = () =>  {
@@ -23,10 +14,7 @@ const App = () =>  {
 
   return (
     <div className={classes.container}>
-      <Typography className={classes.title}>HELLO!</Typography>
-      <IconButton className={classes.button}>
-        <Shop className={classes.icon} />
-      </IconButton>
+      <Header />
     </div>
   );
 };
