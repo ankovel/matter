@@ -1,12 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const useStyles = makeStyles({
-  container: {
-    width: '1140px',
-    margin: '0 auto',
-  }
+  container: {},
 });
 
 const App = () =>  {
@@ -15,7 +13,9 @@ const App = () =>  {
   return (
     <div className={classes.container}>
       <Header />
+      <Footer />
     </div>
+    
   );
 };
 
