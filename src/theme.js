@@ -17,6 +17,9 @@ const theme = createTheme({
       default: '#fff',
     },
   },
+  typography: {
+    fontFamily: 'Proxima Nova, sans-serif',
+  },
 });
 
 export default theme;
