@@ -5,24 +5,24 @@ import HeaderIcon from './HeaderIcon';
 import Main from '../Main/Main';
 
 const useStyles = makeStyles({
-    header: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: '29px 0',
-    },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '29px 0',
+  },
 });
 
 const Header = () => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <div className={classes.header}>
-            <Main>
-                <HeaderNav />
-                <HeaderIcon />
-            </Main>
-        </div>
-    )
+  return (
+    <div className={classes.header}>
+      <Main>
+        <HeaderNav />
+        <HeaderIcon />
+      </Main>
+    </div>
+  )
 }
 
 export default Header;
