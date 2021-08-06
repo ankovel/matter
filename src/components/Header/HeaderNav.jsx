@@ -1,8 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 import Logo from './Logo';
-
 
 const useStyles = makeStyles({
     navWrapper: {
@@ -17,10 +17,11 @@ const useStyles = makeStyles({
       listStyle: 'none',
       fontSize: '15px',   
     },
-    btn: {
+    link: {
       display: 'flex',
       alignItems: 'center',
       padding: '0',
+      textDecoration: 'none',
       fontSize: '15px',
       fontWeight: '600',
       cursor: 'pointer',
@@ -52,28 +53,28 @@ const HeaderNav = () => {
       <Logo />
       <nav className={classes.nav}>
         <li className={classes.item}>
-          <button type="button" className={classes.btn}>
+          <NavLink to="/shop"className={classes.link}>
             <span>shop</span>
             <ExpandMore className={classes.arrow} />
-          </button>                   
+          </NavLink>                   
         </li>
         <li className={classes.item}>
-          <button type="button" className={classes.btn}>
+          <NavLink to="/fabric"className={classes.link}>
             <span>fabric</span>
             <ExpandMore className={classes.arrow} />
-          </button>              
+          </NavLink>            
         </li>
         <li className={classes.item}>
-          <button type="button" className={classes.btn}>
+          <NavLink to="/journal"className={classes.link}>
             <span>journal</span>
             <ExpandMore className={classes.arrow} />
-          </button>                  
+          </NavLink>                 
         </li>
         <li className={classes.item}>
-          <button type="button" className={classes.btn}>
+          <NavLink to="/about"className={classes.link}>
             <span>about</span>
             <ExpandMore className={classes.arrow} />
-          </button>
+          </NavLink> 
         </li>
       </nav>
     </div>

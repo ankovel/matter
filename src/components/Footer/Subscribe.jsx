@@ -5,12 +5,10 @@ import { makeStyles } from '@material-ui/core';
 import { Facebook, Twitter } from '../../icons';
 
 const useStyles = makeStyles({
-  subscribe: {},
   title: {
     marginBottom: '19px',
     color: '#dedede',
   },
-  form: {},
   input: {
     width: '360px',
     padding: '10px',
@@ -30,6 +28,7 @@ const useStyles = makeStyles({
     padding: '10px 19px',
     fontSize: '12px',
     fontWeight: '600',
+    border: '0',
     letterSpacing: '2px',
     textTransform: 'uppercase',
     backgroundColor: 'white',

@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
-import App from './App';
+import Router from './components/Router/Router';
 import theme from './theme';
+import history from './helpers/history';
 import './index.css';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter history={history}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <Router />
     </ThemeProvider>
   </BrowserRouter>,
   document.getElementById('root'),
