@@ -1,4 +1,6 @@
 {
+  "name": "matter",
+  "homepage": "http://ankovel.github.io/matter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
