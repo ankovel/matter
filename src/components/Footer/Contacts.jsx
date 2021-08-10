@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Link } from '@material-ui/core';
 
 const useStyles = makeStyles({
   contact: {
@@ -11,10 +11,19 @@ const useStyles = makeStyles({
   },
   text: {
     lineHeight: '1.83',
+    '&:hover': {
+      color: '#ff6008',
+    } 
   },
   item: {
     display: 'block',
     marginTop: '27px',
+    textDecoration: 'none',
+    color: '#dedede',
+    '&:hover': {
+      color: '#ff6008',
+      textDecoration: 'underline',
+    } 
   },
 });
 
@@ -25,7 +34,7 @@ const Contacts = () => {
     <div className={classes.contact}>
       <h3 className={classes.title}>Contact Us</h3>
       <p className={classes.text}>26A Pagoda St, TANGS, Singapore, 058187</p>
-      <span className={classes.item}>+65 6221 5462</span>
+      <Link className={classes.item} href='tel:+6562215462'>+65 6221 5462</Link>
     </div>
   );
 }    

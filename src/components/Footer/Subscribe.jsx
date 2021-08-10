@@ -42,11 +42,27 @@ const useStyles = makeStyles({
     padding: '5px',
     borderRadius: '50%',
     backgroundColor: '#b2b2b2',
-    color: '#33333a',
+    color: '#33333a', 
   },
   fb: {
-    marginRight: '10px',
+    marginRight: '15px',
+    '&:hover': {
+      width: '35px',
+      height: '35px',
+      backgroundColor: 'transparent',
+      color: '#4867aa',
+      transition: '0.4s all ease',
+    }
   },
+  tw: {
+    '&:hover': {
+      width: '35px',
+      height: '35px',
+      backgroundColor: 'transparent',
+      color: '#28a9e0',
+      transition: '0.4s all ease',
+    }
+  }
 });
 
 const Subscribe = () => {
@@ -65,7 +81,7 @@ const Subscribe = () => {
       </Link>
       
       <Link href="/" className={classes.icons}>
-        <Twitter className={classes.icon} />
+        <Twitter className={cn(classes.icon, classes.tw)} />
       </Link>
     </div>
   );
