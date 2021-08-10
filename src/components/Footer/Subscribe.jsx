@@ -13,9 +13,11 @@ const useStyles = makeStyles({
     width: '360px',
     padding: '10px',
     marginRight: '30px',
+    fontSize: '16px',
     backgroundColor: 'transparent',
     border: 'solid 1px #666666',
     outline: '0',
+    color: 'white',
     '&::placeholder': {
       fontSize: '14px',
       fontWeight: '600',
@@ -32,6 +34,7 @@ const useStyles = makeStyles({
     letterSpacing: '2px',
     textTransform: 'uppercase',
     backgroundColor: 'white',
+    cursor: 'pointer',
     color: '#33333a',
   },
   icon: {

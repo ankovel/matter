@@ -5,44 +5,43 @@ import { ExpandMore } from '@material-ui/icons';
 import Logo from './Logo';
 
 const useStyles = makeStyles({
-    navWrapper: {
-      display: 'flex',
-      alignItems: 'center',
-    },
-    nav: {
-      display: 'flex',
-    },
-    item: {
-      marginLeft: '41px',
-      listStyle: 'none',
-      fontSize: '15px',   
-    },
-    link: {
-      display: 'flex',
-      alignItems: 'center',
-      padding: '0',
-      textDecoration: 'none',
-      fontSize: '15px',
-      fontWeight: '600',
-      cursor: 'pointer',
-      border: 'none',
-      backgroundColor: 'transparent',
-      color: '#33333a',
-      letterSpacing: '1px',
-      textTransform: 'uppercase',
-      transition: '0.3s color ease',
-      '&:hover': {
-        color: '#ff6008',
-        '& $arrow': {
-            transform: 'rotate(180deg)',
-          },
-      }            
-    },
-    arrow: {
-      width: '16px',
-      transition: '0.3s transform ease',
-    }
-     
+  navWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  nav: {
+    display: 'flex',
+  },
+  item: {
+    marginLeft: '41px',
+    listStyle: 'none',
+    fontSize: '15px',   
+  },
+  link: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0',
+    textDecoration: 'none',
+    fontSize: '15px',
+    fontWeight: '600',
+    cursor: 'pointer',
+    border: 'none',
+    backgroundColor: 'transparent',
+    color: '#33333a',
+    letterSpacing: '1px',
+    textTransform: 'uppercase',
+    transition: '0.3s color ease',
+    '&:hover': {
+      color: '#ff6008',
+      '& $arrow': {
+          transform: 'rotate(180deg)',
+        },
+    }            
+  },
+  arrow: {
+    width: '16px',
+    transition: '0.3s transform ease',
+  },
 });
 
 const HeaderNav = () => {
