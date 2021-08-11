@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     zIndex: 1,
     padding: '38px 22px 30px 2px',
     left: 0,
-    top: '42%',
+    top: '40%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
     border: '0',
     borderRadius: '0 55px 55px 0',
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     zIndex: 1,
     padding: '38px 2px 30px 22px',
     right: 0,
-    top: '42%',
+    top: '40%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
     border: '0',
     borderRadius: '55px 0 0 55px',
@@ -38,7 +38,6 @@ const useStyles = makeStyles({
   arrow: {
     width: '40px',
     height: '35px',
-
   },
   title: {
     width: '458px',
