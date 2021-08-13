@@ -1,9 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Main from '../components/Main/Main';
-import HomeBanner from '../components/HomeBanner/HomeBanner';
+import HomeBanner from '../components/Home/HomeBanner/HomeBanner';
 import ProductCard from '../components/Home/ProductCard/ProductCard';
 import AboutMatter from '../components/Home/AboutMatter/AboutMatter';
+import Explore from '../components/Home/Explore/Explore';
 
 const useStyles = makeStyles({
   container: {
@@ -27,6 +28,9 @@ const useStyles = makeStyles({
     position: 'relative',
     width: '263px',
   },
+  explore: {
+    backgroundColor: '#fcfcfc',
+  },
 });
 
 const HomePage = () => {
@@ -48,6 +52,11 @@ const HomePage = () => {
       <div className={classes.about}>
         <Main>
           <AboutMatter />
+        </Main>
+      </div>
+      <div className={classes.explore}>
+        <Main>
+          <Explore />
         </Main>
       </div>
     </div>
