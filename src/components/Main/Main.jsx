@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     flexDirection: 'inherit',
     justifyContent: 'inherit',
     alignItems: 'inherit',
+    color: '#33333a',
   },
 });
 
