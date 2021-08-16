@@ -1,10 +1,20 @@
 import React from 'react';
-import cn from 'classnames'
+import cn from 'classnames';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
+
+const propTypes = {
+  article: PropTypes.shape({
+    id: PropTypes.string,
+    date: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    image: PropTypes.string,
+  }).isRequired,
+};
 
 const useStyles = makeStyles({
   info: {
-    
     borderTop: 'solid 2px #33333a',
   },
   item: {
@@ -45,23 +55,24 @@ const useStyles = makeStyles({
   },
 });
 
-const BigArticle = () => {
+const BigArticle = (props) => {
+  const { article } = props;
+  const { title, text, date, image } = article;
   const classes = useStyles();
 
   return (
     <div className={classes.info}>
       <div className={classes.item}> 
         <span className={cn(classes.fieldTested, classes.date)}>FIELDTESTED</span>
-        <span className={classes.date}>JANUARY 19, 2017</span>
+        <span className={classes.date}>{date}</span>
       </div>
-      <h2 className={classes.title}>Connected Clothing: Raye Padit</h2>
-      <p className={classes.text}>As a voice for conscious fashion, Raye Padit is motivated by the belief that one person’s actions, 
-        no matter how small, holds great impact. This core ideal has driven him to start his three passion projects: 
-        Connected Threads Asia, PeyaR, and Swagalls. 
-      </p>
-      <img className={classes.img} src="images/explore.png" alt="explore" />
+      <h2 className={classes.title}>{title}</h2>
+      <p className={classes.text}>{text}</p>
+      <img className={classes.img} src={image} alt={title} />
     </div>
   )
 }
+
+BigArticle.propTypes = propTypes;
 
 export default BigArticle;

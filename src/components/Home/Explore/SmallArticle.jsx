@@ -1,6 +1,17 @@
 import React from 'react';
 import cn from 'classnames'
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
+
+const propTypes = {
+  article: PropTypes.shape({
+    id: PropTypes.string,
+    date: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    image: PropTypes.string,
+  }).isRequired,
+};
 
 const useStyles = makeStyles({
   info: {
@@ -11,6 +22,7 @@ const useStyles = makeStyles({
   item: {
     display: 'flex',
     marginTop: '15px',
+    marginBottom: '7px',
   },
   date: {
     fontSize: '12px',
@@ -32,28 +44,34 @@ const useStyles = makeStyles({
     }          
   },
   title: {
-    marginTop: '7px',
+    height: '70px',
+    marginBottom: '10px',
     fontSize: '24px',
     fontWeight: 'normal',
   },
-  img: {
-    marginTop: '18px',
+  text: {
+    fontSize: '16px',
   },
 });
 
-const SmallArticle = () => {
+const SmallArticle = (props) => {
+  const { article } = props;
+  const { title, text, date, image } = article;
   const classes = useStyles();
 
   return (
     <div className={classes.info}> 
       <div className={classes.item}> 
         <span className={cn(classes.fieldTested, classes.date)}>FIELDTESTED</span>
-        <span className={classes.date}>JANUARY 19, 2017</span>
+        <span className={classes.date}>{date}</span>
       </div>
-      <h2 className={classes.title}>Kérastase: A Collaboration</h2>
-      <img className={classes.img} src="images/small2.png" alt="explore" />
+      <h2 className={classes.title}>{title}</h2>
+      {image && <img className={classes.img} src={image} alt={title} />}
+      {text && <p className={classes.text}>{text}</p>}
     </div>
   )
 }
+
+SmallArticle.propTypes = propTypes;
 
 export default SmallArticle;

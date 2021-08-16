@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import BigArticle from './BigArticle';
 import SmallArticle from './SmallArticle';
+import articles from '../../../constants/articles';
 
 const useStyles = makeStyles({
   container: {
@@ -11,6 +12,7 @@ const useStyles = makeStyles({
   wrapper: {
     display: 'flex',
     justifyContent: 'space-between',
+    marginBottom: '30px',
   },
   title: {
     marginBottom: '24px',
@@ -45,13 +47,14 @@ const Explore = () => {
     <div className={classes.container}>
       <h1 className={classes.title}>Explore</h1>
       <div className={classes.wrapper}>
-        <BigArticle />
-        <div className={classes.small}>
-          <SmallArticle />
-          <SmallArticle />
-          <SmallArticle />
-          <SmallArticle />
-        </div>
+        <BigArticle article={articles[0]} />
+        {articles.length > 1 &&
+          <div className={classes.small}>
+            {articles.slice(1, 5).map(article => (
+              <SmallArticle key={article.id} article={article} />
+            ))}
+          </div>
+        }
       </div>
 
       <button type="button" className={classes.btn}>See the journal</button>
