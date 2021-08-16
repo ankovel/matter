@@ -1,6 +1,16 @@
 import React from 'react';
+import cn from 'classnames';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+
+const propTypes = {
+  className: PropTypes.string,
+};
+
+const defaultProps = {
+  className: '',
+};
 
 const useStyles = makeStyles({
   link: {
@@ -8,11 +18,12 @@ const useStyles = makeStyles({
     color: '#33333a',
   },
   item: {
-    position: 'absolute',
+    position: 'relative',
     top: '10px',
     left: '10px',
   },
   new: {
+    position: 'absolute',
     padding: '0 7px',
     fontSize: '12px',
     textTransform: 'uppercase',
@@ -32,11 +43,12 @@ const useStyles = makeStyles({
   }
 });
 
-const ProductCard = () => {
+const ProductCard = (props) => {
+  const { className } = props;
   const classes = useStyles();
 
   return (
-    <Link href="/" className={classes.link}> 
+    <Link to="/" className={cn(classes.link, className)}> 
       <div className={classes.item}>
         <span className={classes.new}>new</span>
       </div>
@@ -45,6 +57,9 @@ const ProductCard = () => {
         <span className={classes.price}>$599.00</span>
     </Link>
   )
-}
+};
+
+ProductCard.propTypes = propTypes;
+ProductCard.defaultProps = defaultProps;
 
 export default ProductCard;

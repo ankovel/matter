@@ -7,7 +7,6 @@ const useStyles = makeStyles({
   container: {
     display: 'grid',
     padding: '60px 0',
-    marginBottom: '62px',
   },
   wrapper: {
     display: 'flex',
@@ -30,17 +29,29 @@ const useStyles = makeStyles({
     border: 'none',
     cursor: 'pointer',
     color: '#fff',
-  }
+  },
+  small: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    width: '555px',
+  },
 });
 
 const Explore = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.container}>
       <h1 className={classes.title}>Explore</h1>
       <div className={classes.wrapper}>
         <BigArticle />
-        <SmallArticle />
+        <div className={classes.small}>
+          <SmallArticle />
+          <SmallArticle />
+          <SmallArticle />
+          <SmallArticle />
+        </div>
       </div>
 
       <button type="button" className={classes.btn}>See the journal</button>

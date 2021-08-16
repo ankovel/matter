@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   info: {
-    width: '555',
+    
     borderTop: 'solid 2px #33333a',
   },
   item: {
