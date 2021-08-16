@@ -7,6 +7,7 @@ import AboutMatter from '../components/Home/AboutMatter/AboutMatter';
 import Explore from '../components/Home/Explore/Explore';
 import Shop from '../components/Home/Shop/Shop';
 import categories from '../constants/categories';
+import products from '../constants/products';
 
 const useStyles = makeStyles({
   container: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
   },
   products: {
     backgroundColor: '#fcfcfc',
-    padding: '62px 0',
+    padding: '60px 0',
   },
   about: {
     paddingTop: '62px',
@@ -31,11 +32,15 @@ const useStyles = makeStyles({
   },
   wrapper: {
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
   },
   card: {
     width: '23%',
+    marginTop: '40px',
+    '&:nth-child(-n+4)': {
+      marginTop: 0,
+    },
   },
   shop: {
     padding: '62px 0',
@@ -52,10 +57,17 @@ const HomePage = () => {
         <Main>
           <h1 className={classes.title}>Featured</h1>
           <div className={classes.wrapper}>
-            <ProductCard className={classes.card} />
-            <ProductCard className={classes.card} />
-            <ProductCard className={classes.card} />
-            <ProductCard className={classes.card} />
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                className={classes.card}
+                image={product.image}
+                title={product.title}
+                price={product.price}
+                isNew={product.isNew}
+                href="/shop"
+              />
+            ))}
           </div>
         </Main>
       </div>
