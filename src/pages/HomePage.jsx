@@ -7,6 +7,7 @@ import AboutMatter from '../components/Home/AboutMatter/AboutMatter';
 import Explore from '../components/Home/Explore/Explore';
 import Shop from '../components/Home/Shop/Shop';
 import Videos from '../components/Home/Videos/Videos';
+import Magazine from '../components/Home/Magazine/Magazine';
 import categories from '../constants/categories';
 import products from '../constants/products';
 
@@ -48,6 +49,9 @@ const useStyles = makeStyles({
   },
   videos: {
     backgroundColor: '#fcfcfc',
+  },
+  magazine: {
+    padding: '60px 0',
   },
 });
 
@@ -104,6 +108,11 @@ const HomePage = () => {
       <div className={classes.videos}>
         <Main>
           <Videos />
+        </Main>
+      </div>
+      <div className={classes.magazine}>
+        <Main>
+          <Magazine />
         </Main>
       </div>
     </div>
