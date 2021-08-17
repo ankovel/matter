@@ -6,6 +6,7 @@ import ProductCard from '../components/Home/ProductCard/ProductCard';
 import AboutMatter from '../components/Home/AboutMatter/AboutMatter';
 import Explore from '../components/Home/Explore/Explore';
 import Shop from '../components/Home/Shop/Shop';
+import Videos from '../components/Home/Videos/Videos';
 import categories from '../constants/categories';
 import products from '../constants/products';
 
@@ -44,6 +45,9 @@ const useStyles = makeStyles({
   },
   shop: {
     padding: '62px 0',
+  },
+  videos: {
+    backgroundColor: '#fcfcfc',
   },
 });
 
@@ -95,6 +99,11 @@ const HomePage = () => {
               />
             ))}
           </div>
+        </Main>
+      </div>
+      <div className={classes.videos}>
+        <Main>
+          <Videos />
         </Main>
       </div>
     </div>

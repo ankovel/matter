@@ -21,9 +21,9 @@ const useStyles = makeStyles({
     fontWeight: 'normal',
   },
   btn: {
+    width: '174px',
     margin: '0 auto',
-    padding: '8px 20px',
-    width: '172px',
+    padding: '11.5px 0',
     fontSize: '12px',
     letterSpacing: '2px',
     textTransform: 'uppercase',
@@ -31,6 +31,10 @@ const useStyles = makeStyles({
     border: 'none',
     cursor: 'pointer',
     color: '#fff',
+    '&:hover': {
+      color: '#ff6008',
+      transition: '0.3s all ease',
+    },
   },
   small: {
     display: 'flex',

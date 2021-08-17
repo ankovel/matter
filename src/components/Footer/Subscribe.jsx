@@ -9,6 +9,9 @@ const useStyles = makeStyles({
     marginBottom: '19px',
     color: '#dedede',
   },
+  form: {
+    display: 'flex',
+  },
   input: {
     width: '360px',
     padding: '10px',
@@ -27,7 +30,6 @@ const useStyles = makeStyles({
   },
   btn: {
     width: '166px',
-    padding: '10px 19px',
     fontSize: '12px',
     fontWeight: '600',
     border: '0',
@@ -36,6 +38,10 @@ const useStyles = makeStyles({
     backgroundColor: 'white',
     cursor: 'pointer',
     color: '#33333a',
+    '&:hover': {
+      color: '#ff6008',
+      transition: '0.3s all ease',
+    },
   },
   icon: {
     marginTop: '20px',
