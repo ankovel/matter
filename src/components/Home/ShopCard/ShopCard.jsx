@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const propTypes = {
   className: PropTypes.string,
@@ -53,12 +53,14 @@ const useStyles = makeStyles({
   now: {
     visibility: 'hidden',
     position: 'absolute',
+    width: '180px',
     textAlign: 'center',
     padding: '11.5px 0',
     bottom: '15%',
     left: '42px',
     right: '42px',
     backgroundColor: '#33333a',
+    cursor: 'pointer',
     color: '#fff',
     fontSize: '12px',
     letterSpacing: '2px',
@@ -66,7 +68,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Shop = (props) => {
+const ShopCard = (props) => {
   const { className, title, image, href } = props;
   const classes = useStyles();
 
@@ -79,7 +81,7 @@ const Shop = (props) => {
   )
 };
 
-Shop.propTypes = propTypes;
-Shop.defaultProps = defaultProps;
+ShopCard.propTypes = propTypes;
+ShopCard.defaultProps = defaultProps;
 
-export default Shop;
+export default ShopCard;

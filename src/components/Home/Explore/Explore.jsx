@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import BigArticle from './BigArticle';
 import SmallArticle from './SmallArticle';
+import Button from '../../Main/Button';
 import articles from '../../../constants/articles';
 
 const useStyles = makeStyles({
@@ -23,18 +24,6 @@ const useStyles = makeStyles({
   btn: {
     width: '174px',
     margin: '0 auto',
-    padding: '11.5px 0',
-    fontSize: '12px',
-    letterSpacing: '2px',
-    textTransform: 'uppercase',
-    backgroundColor: '#33333a',
-    border: 'none',
-    cursor: 'pointer',
-    color: '#fff',
-    '&:hover': {
-      color: '#ff6008',
-      transition: '0.3s all ease',
-    },
   },
   small: {
     display: 'flex',
@@ -61,7 +50,7 @@ const Explore = () => {
         }
       </div>
 
-      <button type="button" className={classes.btn}>See the journal</button>
+      <Button variant="black" className={classes.btn}>See the journal</Button>
     </div>
   )
 }

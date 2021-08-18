@@ -8,7 +8,7 @@ const useStyles = makeStyles({
   header: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '29px 0',
+    padding: '20px 0',
   },
 });
 

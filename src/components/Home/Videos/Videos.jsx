@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import { makeStyles } from '@material-ui/core';
+import Button from '../../Main/Button';
 
 const useStyles = makeStyles ({
   container: {
@@ -27,18 +28,6 @@ const useStyles = makeStyles ({
   btn: {
     width: '174px',
     margin: '0 auto',
-    padding: '11.5px 0',
-    fontSize: '12px',
-    letterSpacing: '2px',
-    textTransform: 'uppercase',
-    backgroundColor: '#33333a',
-    border: 'none',
-    cursor: 'pointer',
-    color: '#fff',
-    '&:hover': {
-      color: '#ff6008',
-      transition: '0.3s all ease',
-    },
   },
   description: {
     marginLeft: '20px',
@@ -67,7 +56,7 @@ const Videos = () => {
           <h3 className={classes.description}>New Dhakai Jamdani Sarees</h3>
         </div>
       </div>
-      <button type="button" className={classes.btn}>SHOW MORE</button>
+      <Button className={classes.btn} variant="black">Show more</Button>
     </div>
   )
 }

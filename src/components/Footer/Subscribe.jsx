@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
+import Button from '../Main/Button';
 import { Facebook, Twitter } from '../../icons';
 
 const useStyles = makeStyles({
@@ -30,17 +31,8 @@ const useStyles = makeStyles({
   },
   btn: {
     width: '166px',
-    fontSize: '12px',
-    fontWeight: '600',
-    border: '0',
-    letterSpacing: '2px',
-    textTransform: 'uppercase',
-    backgroundColor: 'white',
-    cursor: 'pointer',
-    color: '#33333a',
-    '&:hover': {
-      color: '#ff6008',
-      transition: '0.3s all ease',
+    '&:after': {
+      border: 'none',
     },
   },
   icon: {
@@ -79,7 +71,7 @@ const Subscribe = () => {
       <h3 className={classes.title}>Subscribe to newsletter</h3>
       <form className={classes.form}>
         <input id="email" className={classes.input} placeholder="enter your email" type="text" />
-        <button type="button" className={classes.btn}>Subscribe</button>
+        <Button className={classes.btn} variant="white">Subscribe</Button>
       </form>
       
       <Link href="/" className={classes.icons}>

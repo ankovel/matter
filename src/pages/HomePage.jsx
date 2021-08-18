@@ -5,7 +5,7 @@ import HomeBanner from '../components/Home/HomeBanner/HomeBanner';
 import ProductCard from '../components/Home/ProductCard/ProductCard';
 import AboutMatter from '../components/Home/AboutMatter/AboutMatter';
 import Explore from '../components/Home/Explore/Explore';
-import Shop from '../components/Home/Shop/Shop';
+import ShopCard from '../components/Home/ShopCard/ShopCard';
 import Videos from '../components/Home/Videos/Videos';
 import Magazine from '../components/Home/Magazine/Magazine';
 import categories from '../constants/categories';
@@ -94,7 +94,7 @@ const HomePage = () => {
           <h1 className={classes.title}>Shop</h1>
           <div className={classes.wrapper}>
             {categories.map((category) => (
-              <Shop
+              <ShopCard
                 key={category.id}
                 className={classes.card}
                 title={category.title}

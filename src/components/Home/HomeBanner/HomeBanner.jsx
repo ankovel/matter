@@ -90,14 +90,14 @@ const HomeBanner = () => {
       <div className={classes.container}>
         <div className={classes.banner}>
           <h1 className={classes.title}>Perfume Tips Tricks</h1>
-          <Link href="/" className={classes.btn}>Shop now</Link>
+          <Link href="/shop" className={classes.btn}>Shop now</Link>
         </div>
         <img className={classes.img} src="images/slider.png" alt="slider" />
       </div>
       <div className={classes.container}>
         <div className={classes.banner}>
           <h1 className={classes.title}>Perfume Tips Tricks</h1>
-          <Link href="/" className={classes.btn}>Shop now</Link>
+          <Link href="/shop" className={classes.btn}>Shop now</Link>
         </div>
         <img  className={classes.img} src="images/slider2.png" alt="slider2" />
       </div>

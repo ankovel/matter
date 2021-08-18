@@ -43,7 +43,7 @@ const Magazine = () => {
           <img className={classes.image} src="images/peppermint.png" alt="peppermint" />
         </Link>
         <Link to="/">
-          <img className={classes.image} src="images/pb.png" alt="conscious" />
+          <img className={classes.image} src="images/pb.png" alt="pb" />
         </Link>
         <Link to="/"> 
           <img className={classes.image} src="images/traveler.png" alt="traveler" />
