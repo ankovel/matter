@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 const propTypes = {
   article: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.number,
     date: PropTypes.string,
     title: PropTypes.string,
     text: PropTypes.string,

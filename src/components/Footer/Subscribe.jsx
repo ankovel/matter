@@ -74,11 +74,11 @@ const Subscribe = () => {
         <Button className={classes.btn} variant="white">Subscribe</Button>
       </form>
       
-      <Link href="/" className={classes.icons}>
+      <Link to="/" className={classes.icons}>
         <Facebook className={cn(classes.icon, classes.fb)} />
       </Link>
       
-      <Link href="/" className={classes.icons}>
+      <Link to="/" className={classes.icons}>
         <Twitter className={cn(classes.icon, classes.tw)} />
       </Link>
     </div>

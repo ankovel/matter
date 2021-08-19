@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
+import Main from '../Main/Main';
 
 const useStyles = makeStyles ({
   wrapper: {
@@ -7,6 +8,11 @@ const useStyles = makeStyles ({
     flexDirection: 'column',
     alignItems: 'flex-end',
     paddingTop: '130px',
+    height: '600px',
+    backgroundImage: 'url(images/ShopBanner.png)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    filter: 'opacity(0.8)',
   },
   title: {
     marginBottom: '35px',
@@ -23,8 +29,10 @@ const Banner = () => {
   const classes = useStyles();
   return (
     <div className={classes.wrapper}>
-      <h1 className={classes.title}>Apparels</h1>
-      <p className={classes.text}>White Gold began gaining popularity in the early 1900’s as an alternative to platinum. </p>
+      <Main>
+        <h1 className={classes.title}>Apparels</h1>
+        <p className={classes.text}>White Gold began gaining popularity in the early 1900’s as an alternative to platinum. </p>
+      </Main>
     </div>
   )
 }

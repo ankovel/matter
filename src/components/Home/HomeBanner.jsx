@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 import { makeStyles, Link } from '@material-ui/core';
-import { Arrow } from '../../../icons';
+import { Arrow } from '../../icons';
 
 const useStyles = makeStyles({
   container: {

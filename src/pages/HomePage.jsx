@@ -1,13 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Main from '../components/Main/Main';
-import HomeBanner from '../components/Home/HomeBanner/HomeBanner';
-import ProductCard from '../components/Home/ProductCard/ProductCard';
-import AboutMatter from '../components/Home/AboutMatter/AboutMatter';
+import HomeBanner from '../components/Home/HomeBanner';
+import ProductCard from '../components/Home/ProductCard';
+import AboutMatter from '../components/Home/AboutMatter';
 import Explore from '../components/Home/Explore/Explore';
-import ShopCard from '../components/Home/ShopCard/ShopCard';
-import Videos from '../components/Home/Videos/Videos';
-import Magazine from '../components/Home/Magazine/Magazine';
+import ShopCard from '../components/Home/ShopCard';
+import Videos from '../components/Home/Videos';
+import Magazine from '../components/Home/Magazine';
 import categories from '../constants/categories';
 import products from '../constants/products';
 
