@@ -65,7 +65,7 @@ const HomePage = () => {
         <Main>
           <h1 className={classes.title}>Featured</h1>
           <div className={classes.wrapper}>
-            {products.map((product) => (
+            {products.slice(0, 8).map((product) => (
               <ProductCard
                 key={product.id}
                 className={classes.card}
@@ -73,7 +73,6 @@ const HomePage = () => {
                 title={product.title}
                 price={product.price}
                 isNew={product.isNew}
-                href="/shop"
               />
             ))}
           </div>

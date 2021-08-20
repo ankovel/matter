@@ -8,7 +8,6 @@ const propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
   isNew: PropTypes.bool,
 };
 
@@ -54,10 +53,11 @@ const useStyles = makeStyles({
   title: {
     marginBottom: '5px',
     fontSize: '16px',
+    fontWeight: 'normal',
   },
   price: {
     fontSize: '14px',
-    fontWeight: '600',
+    fontWeight: 'normal',
   },
   btn: {
     visibility: 'hidden',
@@ -78,11 +78,11 @@ const useStyles = makeStyles({
 });
 
 const ProductCard = (props) => {
-  const { className, image, title, price, href, isNew } = props;
+  const { className, image, title, price, isNew } = props;
   const classes = useStyles();
 
   return (
-    <div to={href} className={cn(classes.card, className)}> 
+    <div className={cn(classes.card, className)}> 
       {isNew && <span className={classes.new}>new</span>}
       <img className={classes.img} src={image} alt={title} />
       <h3 className={classes.title}>{title}</h3>

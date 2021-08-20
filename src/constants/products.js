@@ -50,7 +50,31 @@ const products = [
     id: 8,
     image: 'https://i.postimg.cc/d31bXmCg/2021-08-16-14-47-01.png',
     title: 'Wide side-slit trousers',
-    price: '85.34$',
+    price: '29.32$',
+  },
+  {
+    id: 9,
+    image: 'https://i.postimg.cc/d31bXmCg/2021-08-16-14-47-01.png',
+    title: 'Wide side-slit trousers',
+    price: '87.34$',
+  },
+  {
+    id: 10,
+    image: 'https://i.postimg.cc/d31bXmCg/2021-08-16-14-47-01.png',
+    title: 'Wide side-slit trousers',
+    price: '112.00$',
+  },
+  {
+    id: 11,
+    image: 'https://i.postimg.cc/d31bXmCg/2021-08-16-14-47-01.png',
+    title: 'Wide side-slit trousers',
+    price: '16.99$',
+  },
+  {
+    id: 12,
+    image: 'https://i.postimg.cc/d31bXmCg/2021-08-16-14-47-01.png',
+    title: 'Wide side-slit trousers',
+    price: '68.00$',
   },
 ];
 

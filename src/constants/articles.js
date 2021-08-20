@@ -30,6 +30,30 @@ const articles = [
     title: 'How To Wear The Lounge Lunghi',
     image: 'https://i.postimg.cc/G2yysQRr/Small1.png',
   },
+  {
+    id: 6,
+    date: 'JUlI 19, 2021',
+    title: 'How To Wear The Lounge Lunghi',
+    image: 'https://i.postimg.cc/G2yysQRr/Small1.png',
+  },
+  {
+    id: 7,
+    date: 'JUlI 19, 2021',
+    title: 'How To Wear The Lounge Lunghi',
+    image: 'https://i.postimg.cc/G2yysQRr/Small1.png',
+  },
+  {
+    id: 8,
+    date: 'JUlI 19, 2021',
+    title: 'How To Wear The Lounge Lunghi',
+    image: 'https://i.postimg.cc/G2yysQRr/Small1.png',
+  },
+  {
+    id: 9,
+    date: 'JUlI 19, 2021',
+    title: 'How To Wear The Lounge Lunghi',
+    image: 'https://i.postimg.cc/G2yysQRr/Small1.png',
+  },
 ];
 
 export default articles;
