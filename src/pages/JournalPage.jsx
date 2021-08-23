@@ -5,6 +5,7 @@ import FilterSelect from '../components/Journal/FilterSelect';
 import SmallArticle from '../components/Home/Explore/SmallArticle';
 import BigArticle from '../components/Home/Explore/BigArticle';
 import articles from '../constants/articles';
+import Loading from '../components/Shop/Loading';
 
 const useStyles = makeStyles({
   header: {
@@ -100,6 +101,9 @@ const useStyles = makeStyles({
     left: 0,
     top: 0,
   },
+  articleBlock: {
+    display: 'grid',
+  },
   articles: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -113,6 +117,9 @@ const useStyles = makeStyles({
   smallMore: {
     display: 'flex',
     justifyContent: 'space-between',
+  },
+  loading: {
+    margin: '0 auto',
   },
 });
 
@@ -191,23 +198,26 @@ const JournalPage = () => {
               </div>
             </div>
           </div>
-          <div className={classes.articles}>
-            <BigArticle article={articles[0]} />
+          <div className={classes.articleBlock}>
+            <div className={classes.articles}>
+              <BigArticle article={articles[0]} />
+              {articles.length > 1 && (
+                <div className={classes.small}>
+                  {articles.slice(1, 5).map((article) => (
+                    <SmallArticle key={article.id} article={article} />
+                  ))}
+                </div>
+              )}
+            </div>
             {articles.length > 1 && (
-              <div className={classes.small}>
-                {articles.slice(1, 5).map((article) => (
+              <div className={classes.smallMore}>
+                {articles.slice(5, 9).map((article) => (
                   <SmallArticle key={article.id} article={article} />
                 ))}
               </div>
             )}
+            <Loading className={classes.loading} />
           </div>
-          {articles.length > 1 && (
-            <div className={classes.smallMore}>
-              {articles.slice(5, 9).map((article) => (
-                <SmallArticle key={article.id} article={article} />
-              ))}
-            </div>
-          )}
         </Main>
       </div>
     </div>
