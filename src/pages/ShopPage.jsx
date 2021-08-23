@@ -13,6 +13,7 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    boxShadow: 'rgb(0 0 0 / 0%) 0px 14px 28px, rgb(0 0 0 / 5%) 0px 10px 10px',
   },
   select: {
     display: 'flex',
@@ -29,9 +30,7 @@ const useStyles = makeStyles({
     color: '#333',
   },
   categories: {
-    backgroundColor: '#fcfcfc',
     padding: '40px 0 60px',
-    boxShadow: 'rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px',
   },
   content: {
     display: 'flex',

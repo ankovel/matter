@@ -2,16 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  container: {
-    marginBottom: '62px',
-  },
-  title: {
-    marginBottom: '24px',
-    textAlign: 'center',
-    fontSize: '42px',
-    fontWeight: 'normal',
-    color: '#33333a',
-  },
   about: {
     display:'flex',
     justifyContent: 'space-between',
@@ -50,43 +40,40 @@ const AboutMatter = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
-      <h1 className={classes.title}>About Matter</h1>
-      <div className={classes.about}>
-        <div className={classes.img}>
-          <img src="images/about.png" alt="about" />
+    <div className={classes.about}>
+      <div className={classes.img}>
+        <img src="images/about.png" alt="about" />
+      </div>
+
+      <div className={classes.wrapper}>
+        <p className={classes.text}> 
+          Our mission is threefold - to foster designer-artisan collaborations, 
+          inspire consumers to value provenance and process, and pioneer industry 
+          change and sustainability for rural textile communities. 
+        </p>
+
+        <div className={classes.info}>
+          <h3 className={classes.infoTitle}>Artisan Employment Days Created</h3>
+          <span className={classes.span}>123456</span>
         </div>
 
-        <div className={classes.wrapper}>
-          <p className={classes.text}> 
-            Our mission is threefold - to foster designer-artisan collaborations, 
-            inspire consumers to value provenance and process, and pioneer industry 
-            change and sustainability for rural textile communities. 
-          </p>
+        <div className={classes.info}>
+          <h3 className={classes.infoTitle}>Countries Involved To Date</h3>
+          <ul className={classes.list}>
+            <li className={classes.item}>India</li>
+            <li className={classes.item}>China</li>
+            <li className={classes.item}>Sri Lanka</li>
+          </ul>
+        </div>
 
-          <div className={classes.info}>
-            <h3 className={classes.infoTitle}>Artisan Employment Days Created</h3>
-            <span className={classes.span}>123456</span>
-          </div>
-
-          <div className={classes.info}>
-            <h3 className={classes.infoTitle}>Countries Involved To Date</h3>
+        <div className={classes.info}>
+          <h3 className={classes.infoTitle}>#MatterTribe </h3>
             <ul className={classes.list}>
-              <li className={classes.item}>India</li>
-              <li className={classes.item}>China</li>
-              <li className={classes.item}>Sri Lanka</li>
+              <li className={classes.item}>12 designers</li>
+              <li className={classes.item}>12 Factories</li> 
             </ul>
-          </div>
-
-          <div className={classes.info}>
-            <h3 className={classes.infoTitle}>#MatterTribe </h3>
-              <ul className={classes.list}>
-                <li className={classes.item}>12 designers</li>
-                <li className={classes.item}>12 Factories</li> 
-              </ul>
-          </div>
-
         </div>
+
       </div>
     </div>
   )

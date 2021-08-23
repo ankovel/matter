@@ -52,6 +52,9 @@ const useStyles = makeStyles({
   text: {
     fontSize: '16px',
   },
+  img: {
+    width: '100%',
+  },
 });
 
 const SmallArticle = (props) => {

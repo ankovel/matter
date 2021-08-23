@@ -4,12 +4,15 @@ import Main from '../components/Main/Main';
 import HomeBanner from '../components/Home/HomeBanner';
 import ProductCard from '../components/Home/ProductCard';
 import AboutMatter from '../components/Home/AboutMatter';
-import Explore from '../components/Home/Explore/Explore';
 import ShopCard from '../components/Home/ShopCard';
 import Videos from '../components/Home/Videos';
 import Magazine from '../components/Home/Magazine';
 import categories from '../constants/categories';
 import products from '../constants/products';
+import BigArticle from '../components/Home/Explore/BigArticle';
+import SmallArticle from '../components/Home/Explore/SmallArticle';
+import articles from '../constants/articles';
+import Button from '../components/Main/Button';
 
 const useStyles = makeStyles({
   container: {
@@ -20,10 +23,22 @@ const useStyles = makeStyles({
     padding: '60px 0',
   },
   about: {
-    paddingTop: '62px',
+    padding: '62px 0',
   },
   explore: {
+    display: 'grid',
+    padding: '60px 0',
     backgroundColor: '#fcfcfc',
+  },
+  btn: {
+    width: '174px',
+    margin: '0 auto',
+  },
+  small: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    width: '555px',
   },
   title: {
     marginBottom: '35px',
@@ -80,12 +95,26 @@ const HomePage = () => {
       </div>
       <div className={classes.about}>
         <Main>
+          <h1 className={classes.title}>About Matter</h1>
           <AboutMatter />
         </Main>
       </div>
       <div className={classes.explore}>
         <Main>
-          <Explore />
+          <h1 className={classes.title}>Explore</h1>
+          <div className={classes.wrapper}>
+            <BigArticle article={articles[0]} />
+            {articles.length > 1 && (
+              <div className={classes.small}>
+                {articles.slice(1, 5).map((article) => (
+                  <SmallArticle key={article.id} article={article} />
+                ))}
+              </div>
+            )}
+          </div>
+          <Button variant="black" className={classes.btn}>
+            See the journal
+          </Button>
         </Main>
       </div>
       <div className={classes.shop}>
