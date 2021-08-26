@@ -5,7 +5,7 @@ import FilterSelect from '../components/Journal/FilterSelect';
 import SmallArticle from '../components/Home/Explore/SmallArticle';
 import BigArticle from '../components/Home/Explore/BigArticle';
 import articles from '../constants/articles';
-import Loading from '../components/Shop/Loading';
+import Loading from '../components/Main/Loading';
 
 const useStyles = makeStyles({
   header: {

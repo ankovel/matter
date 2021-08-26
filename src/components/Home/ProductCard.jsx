@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
+import QuickView from '../Main/QuickView';
 
 const propTypes = {
   className: PropTypes.string,
@@ -80,6 +81,15 @@ const useStyles = makeStyles({
 const ProductCard = (props) => {
   const { className, image, title, price, isNew } = props;
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className={cn(classes.card, className)}> 
@@ -87,7 +97,8 @@ const ProductCard = (props) => {
       <img className={classes.img} src={image} alt={title} />
       <h3 className={classes.title}>{title}</h3>
       <span className={classes.price}>{price}</span>
-      <button type="button" className={classes.btn}>QUICK VIEW</button>
+      <button type="button" className={classes.btn} onClick={handleOpen}>QUICK VIEW</button>
+      <QuickView open={open} onClose={handleClose} />
     </div>
   )
 };

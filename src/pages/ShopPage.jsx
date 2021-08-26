@@ -6,7 +6,7 @@ import Select from '../components/Shop/Select';
 import ProductCard from '../components/Home/ProductCard';
 import products from '../constants/products';
 import Navigation from '../components/Shop/Navigation';
-import Loading from '../components/Shop/Loading';
+import Loading from '../components/Main/Loading';
 
 const useStyles = makeStyles({
   header: {

@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    image: 'https://i.postimg.cc/g2wJC3d9/2021-08-16-15-43-28.png',
+    image: 'https://i.postimg.cc/tTTZh5ZJ/2021-08-26-12-35-49.png',
     title: 'Cropped linen-blend trousers',
     price: '27.00$',
     isNew: true,
