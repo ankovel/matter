@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, Dialog, Tooltip } from '@material-ui/core';
+import { makeStyles, Dialog, Tooltip, IconButton } from '@material-ui/core';
+import { Rating } from '@material-ui/lab';
 import { FavoriteBorder } from '@material-ui/icons';
 import ProductSlider from './ProductSlider';
 import RadioSize from './RadioSize';
 import Button from './Button';
+import Counter from './Counter';
 
 const propTypes = {
   open: PropTypes.bool,
@@ -34,14 +36,40 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     padding: '16px 24px 24px',
   },
+  slider: {
+    width: '45%',
+  }, 
+  info: {
+    width: '53%',
+  },
   title: {
     fontSize: '24px',
     fontWeight: 600,
+  },
+  item: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingBottom: '10px',
+    borderBottom: 'solid 2px #f3f3f3'
   },
   price: {
     fontSize: '24px',
     fontWeight: 400,
     color: '#ff6008',
+  },
+  rating: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  ratingStars: {
+    marginRight: '10px',
+    fontSize: '25px',
+    color: '#ff6008',
+  },
+  ratingNumb: {
+    fontSize: '16px',
+    color: '#666',
   },
   infoProduct: {
     padding: '10px 0',
@@ -51,11 +79,6 @@ const useStyles = makeStyles({
     width: '52%',
     fontSize: '18px',
     fontWeight: '600',
-  },
-  collab: {
-    width: '48%',
-    fontSize: '16px',
-    color: '#666',
   },
   text: {
     margin: '10px 0',
@@ -78,15 +101,10 @@ const useStyles = makeStyles({
     padding: '10px 0',
     borderBottom: 'solid 2px #f3f3f3'
   },
-  slider: {
-    width: '45%',
-  },
-  info: {
-    width: '53%',
-  },
-  item: {
-    paddingBottom: '10px',
-    borderBottom: 'solid 2px #f3f3f3'
+  collab: {
+    width: '48%',
+    fontSize: '16px',
+    color: '#666',
   },
   label: {
     margin: '10px 0', 
@@ -105,16 +123,50 @@ const useStyles = makeStyles({
       marginRight: 0,
     },
   },
-  helper: {
-    fontSize: '12px',
-    color: '#666',
-  },
   guidelines: {
     marginLeft: 'auto',
     cursor: 'default',
     fontSize: '12px',
     letterSpacing: '1px',
     textTransform: 'uppercase',
+  },
+  helper: {
+    fontSize: '12px',
+    color: '#666',
+  },
+  wrapper: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  cartBtn: {
+    width: '180px',
+  },
+  wishlist: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: 0,
+    border: 'none',
+    backgroundColor: 'transparent',
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: 'transparent',
+      '& $wishlistIcon': {
+        color: 'red',
+      },
+    },
+  },
+  wishlistIcon: {
+    width: '30px',
+    height: '30px',
+    marginBottom: '7px',
+    marginRight: '5px',
+  },
+  wishlistText: {
+    paddingBottom: '7px',
+    fontSize: '12px',
+    textTransform: 'uppercase',
+    letterSpacing: '2px',
+    borderBottom: 'solid 2px #333',
   },
   btn: {
     width: '302px',
@@ -124,8 +176,9 @@ const useStyles = makeStyles({
 
 const QuickView = (props) => {
   const { open, onClose } = props;
-  const [selectedValue, setSelectedValue] = useState('1');
   const classes = useStyles();
+  const [count, setCount] = useState('1')
+  const [selectedValue, setSelectedValue] = useState('1');
 
   return (
     <Dialog
@@ -140,6 +193,14 @@ const QuickView = (props) => {
           <h1 className={classes.title}>The Sideswept Dhoti + Bottom Line Grey (Silk)</h1>
           <div className={classes.item}>
             <span className={classes.price}>SGD 139.90 </span>
+            <div className={classes.rating}>
+              <Rating
+                className={classes.ratingStars}
+                defaultValue={1}
+                precision={0.5}
+              />
+              <span className={classes.ratingNumb}>4.8 of 5</span>
+            </div>
           </div>
           <div className={classes.infoProduct}>
             <h2 className={classes.description}>Description</h2>
@@ -193,10 +254,12 @@ const QuickView = (props) => {
           <p className={classes.helper}>Model is a US Size 2-4, wears Matter Size 1. 175 cm tall.</p>
           <h3 className={classes.label}>Quantity</h3>
           <div className={classes.wrapper}>
-            <Button variant="black">Add To Cart</Button>
-            <button type="button">
-              <FavoriteBorder className={classes.likeButton} />
-            </button>
+            <Counter className={classes.counter} value={count} onChange={setCount} />
+            <Button variant="black" className={classes.cartBtn}>Add To Cart</Button>
+            <IconButton className={classes.wishlist}>
+              <FavoriteBorder className={classes.wishlistIcon} />
+              <p className={classes.wishlistText}>Add to wishlist</p>
+            </IconButton>
           </div> 
         </div>
       </div>

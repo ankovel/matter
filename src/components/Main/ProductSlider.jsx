@@ -77,7 +77,10 @@ const ProductSlider = (props) => {
           });
 
           return (
-            <button type="button" className={buttonClassName} key={image} onClick={() => handleClick(image)}>
+            <button type="button" 
+              className={buttonClassName} 
+              key={image} 
+              onClick={() => handleClick(image)}>
               <img  className={classes.image} src={image} alt={image} />
             </button>
           )     

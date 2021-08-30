@@ -32,8 +32,7 @@ const useStyles = makeStyles({
     width: '25px',
     height: '25px',
     '&:hover': {
-      width: '35px',
-      height: '35px',
+      transform: 'scale(1.4)',
       color: '#ff6008',
       transition: '0.3s all ease',
     }            

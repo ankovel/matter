@@ -45,8 +45,7 @@ const useStyles = makeStyles({
   fb: {
     marginRight: '15px',
     '&:hover': {
-      width: '35px',
-      height: '35px',
+      transform: 'scale(1.5)',
       backgroundColor: 'transparent',
       color: '#4867aa',
       transition: '0.4s all ease',
@@ -54,8 +53,7 @@ const useStyles = makeStyles({
   },
   tw: {
     '&:hover': {
-      width: '35px',
-      height: '35px',
+      transform: 'scale(1.5)',
       backgroundColor: 'transparent',
       color: '#28a9e0',
       transition: '0.4s all ease',
