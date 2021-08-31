@@ -39,7 +39,7 @@ const useStyles = makeStyles({
     }            
   },
   arrow: {
-    width: '16px',
+    fontSize: '16px',
     transition: '0.3s transform ease',
   },
 });

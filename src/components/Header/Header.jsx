@@ -9,7 +9,8 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
     padding: '20px 0',
-    borderBottom: 'solid 1px #f3f3f3'
+    borderBottom: 'solid 1px #f3f3f3',
+    backgroundColor: '#fcfcfc',
   },
 });
 

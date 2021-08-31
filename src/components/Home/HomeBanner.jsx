@@ -56,6 +56,8 @@ const useStyles = makeStyles({
     borderBottom: 'solid 2px #fff',
     '&:hover': {
       textDecoration: 'none',
+      color: '#ff6008',
+      borderBottom: 'solid 2px #ff6008',
     },
   }
 

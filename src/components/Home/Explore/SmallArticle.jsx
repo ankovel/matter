@@ -1,7 +1,6 @@
 import React from 'react';
-import cn from 'classnames'
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Link } from '@material-ui/core';
 
 const propTypes = {
   article: PropTypes.shape({
@@ -18,6 +17,13 @@ const useStyles = makeStyles({
     width: '263px',
     height: '283px',
     borderTop: 'solid 2px #33333a',
+    textDecoration: 'none',
+    color: '#33333a',
+    transition: '0.4s all ease',
+    '&:hover': {
+      textDecoration: 'none',
+      transform: 'scale(1.05)',
+    }
   },
   item: {
     display: 'flex',
@@ -28,16 +34,15 @@ const useStyles = makeStyles({
     fontSize: '12px',
     fontWeight: 600,
     letterSpacing: '1px',
-  },
-  fieldTested: {
     position: 'relative',
     marginRight: '10px',
+    whiteSpace: 'pre-wrap',
     '&:after': {
       content: '""',
       position: 'absolute',
       width:'2px',
       height: '2px',
-      right: '-5px',
+      left: '90px',
       bottom: '8px',
       borderRadius: '50%',
       backgroundColor: '#33333a',
@@ -63,15 +68,14 @@ const SmallArticle = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.info}> 
+    <Link href="/" className={classes.info}> 
       <div className={classes.item}> 
-        <span className={cn(classes.fieldTested, classes.date)}>FIELDTESTED</span>
-        <span className={classes.date}>{date}</span>
+        <span className={classes.date}>{`FIELDTESTED ${' '} ${date}`}</span>
       </div>
       <h2 className={classes.title}>{title}</h2>
       {image && <img className={classes.img} src={image} alt={title} />}
       {text && <p className={classes.text}>{text}</p>}
-    </div>
+    </Link>
   )
 }
 

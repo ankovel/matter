@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, Dialog, Tooltip, IconButton } from '@material-ui/core';
+import { makeStyles, Dialog, Tooltip } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
-import { FavoriteBorder } from '@material-ui/icons';
 import ProductSlider from './ProductSlider';
 import RadioSize from './RadioSize';
 import Button from './Button';
 import Counter from './Counter';
+import Wishlist from '../Wishlist';
 
 const propTypes = {
   open: PropTypes.bool,
@@ -123,6 +123,10 @@ const useStyles = makeStyles({
       marginRight: 0,
     },
   },
+  tooltip: {
+    width: '500',
+    height: '150px',
+  },
   guidelines: {
     marginLeft: 'auto',
     cursor: 'default',
@@ -141,33 +145,6 @@ const useStyles = makeStyles({
   cartBtn: {
     width: '180px',
   },
-  wishlist: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: 0,
-    border: 'none',
-    backgroundColor: 'transparent',
-    cursor: 'pointer',
-    '&:hover': {
-      backgroundColor: 'transparent',
-      '& $wishlistIcon': {
-        color: 'red',
-      },
-    },
-  },
-  wishlistIcon: {
-    width: '30px',
-    height: '30px',
-    marginBottom: '7px',
-    marginRight: '5px',
-  },
-  wishlistText: {
-    paddingBottom: '7px',
-    fontSize: '12px',
-    textTransform: 'uppercase',
-    letterSpacing: '2px',
-    borderBottom: 'solid 2px #333',
-  },
   btn: {
     width: '302px',
     margin: '0 auto',
@@ -177,8 +154,13 @@ const useStyles = makeStyles({
 const QuickView = (props) => {
   const { open, onClose } = props;
   const classes = useStyles();
-  const [count, setCount] = useState('1')
-  const [selectedValue, setSelectedValue] = useState('1');
+  const [count, setCount] = useState(1);
+  const [selectedValue, setSelectedValue] = useState('XS');
+  const [like, setLike] = useState(false);
+
+  const toggleLike = () => {
+    setLike(prevValue => !prevValue);
+  };
 
   return (
     <Dialog
@@ -227,27 +209,33 @@ const QuickView = (props) => {
                 className={classes.radioSize}
                 onChange={setSelectedValue}
                 value={selectedValue}
-                label="1"
+                label="XS"
               />
             <RadioSize
               className={classes.radioSize}
               onChange={setSelectedValue}
               value={selectedValue}
-              label="2"
+              label="S"
             />
             <RadioSize
               className={classes.radioSize}
               onChange={setSelectedValue}
               value={selectedValue}
-              label="3"
+              label="M"
             />
             <RadioSize
               className={classes.radioSize}
               onChange={setSelectedValue}
               value={selectedValue}
-              label="4"
+              label="L"
             />
-            <Tooltip title='hello'>
+            <RadioSize
+              className={classes.radioSize}
+              onChange={setSelectedValue}
+              value={selectedValue}
+              label="XL"
+            />
+            <Tooltip title={<img src="./images/size.png" alt="Size Guidelines" className={classes.tooltip} />}>
               <span className={classes.guidelines}>Size Guidelines</span>
             </Tooltip>
           </div>
@@ -256,10 +244,7 @@ const QuickView = (props) => {
           <div className={classes.wrapper}>
             <Counter className={classes.counter} value={count} onChange={setCount} />
             <Button variant="black" className={classes.cartBtn}>Add To Cart</Button>
-            <IconButton className={classes.wishlist}>
-              <FavoriteBorder className={classes.wishlistIcon} />
-              <p className={classes.wishlistText}>Add to wishlist</p>
-            </IconButton>
+            <Wishlist checked={like} onChange={toggleLike} className={classes.whitelist} />
           </div> 
         </div>
       </div>

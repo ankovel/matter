@@ -32,7 +32,7 @@ const articles = [
   },
   {
     id: 6,
-    date: 'August 12, 2021',
+    date: 'AUGUST 12, 2021',
     title: 'How To Wear The Lounge Lunghi',
     image: 'https://i.postimg.cc/gw9pykyy/2021-08-23-15-44-45.png',
   },
@@ -44,13 +44,13 @@ const articles = [
   },
   {
     id: 8,
-    date: 'August 20, 2021',
+    date: 'AUGUST 20, 2021',
     title: 'How To Wear The Lounge Lunghi',
     image: 'https://i.postimg.cc/21LmBBW8/2021-08-23-15-44-26.png',
   },
   {
     id: 9,
-    date: 'August 23, 2021',
+    date: 'AUGUST 23, 2021',
     title: 'How To Wear The Lounge Lunghi',
     image: 'https://i.postimg.cc/4KzgWkwD/2021-08-23-15-44-36.png',
   },

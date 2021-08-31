@@ -71,6 +71,9 @@ const useStyles = makeStyles({
     letterSpacing: '1px',
     textTransform: 'uppercase',
     color: '#33333a',
+    '&:hover': {
+      color: '#ff6008',
+    },
   },
 });
 

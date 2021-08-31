@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-import { Home, Shop, Fabric, Journal, About } from '../../pages';
+import { Home, Shop, Fabric, Journal, About, Article } from '../../pages';
 import Page from '../Page/Page';
 
 const Router = () => (
@@ -10,6 +10,7 @@ const Router = () => (
     <Page path='/fabric' component={Fabric}/>
     <Page path='/journal' component={Journal}/>
     <Page path='/about' component={About}/>
+    <Page path='/article' component={Article}/>
   </Switch>
 );
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Link } from '@material-ui/core';
 import Button from '../Main/Button';
 import { Facebook, Twitter } from '../../icons';
 
@@ -44,11 +43,11 @@ const useStyles = makeStyles({
   },
   fb: {
     marginRight: '15px',
+    transition: '0.4s all ease',
     '&:hover': {
       transform: 'scale(1.5)',
       backgroundColor: 'transparent',
       color: '#4867aa',
-      transition: '0.4s all ease',
     }
   },
   tw: {
@@ -72,11 +71,11 @@ const Subscribe = () => {
         <Button className={classes.btn} variant="white">Subscribe</Button>
       </form>
       
-      <Link to="/" className={classes.icons}>
+      <Link href="https://www.facebook.com" target="_blank" className={classes.icons}>
         <Facebook className={cn(classes.icon, classes.fb)} />
       </Link>
       
-      <Link to="/" className={classes.icons}>
+      <Link href="https://twitter.com/" target="_blank" className={classes.icons}>
         <Twitter className={cn(classes.icon, classes.tw)} />
       </Link>
     </div>

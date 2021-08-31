@@ -16,7 +16,7 @@ const defaultProps = {
 const useStyles = makeStyles({
   counter: {
     display: 'flex',
-    height: '40px',
+    height: '44px',
     border: '1px solid #dedede',
     backgroundColor: '#fff',
   },
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     cursor: 'pointer',
     fontSize: '30px',
     color: '#33333a',
-    width: '40px',
+    width: '42px',
     padding: '0',
     lineHeight: 0,
     backgroundColor: '#f3f3f3',
@@ -39,9 +39,9 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#515356',
-    width: '40px',
+    width: '42px',
   },
 });
 
