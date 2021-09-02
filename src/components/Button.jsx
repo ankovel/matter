@@ -7,10 +7,12 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   variant: PropTypes.oneOf(['white', 'black']).isRequired,
+  onClick: PropTypes.func,
 };
 
 const defaultProps = {
   className: '',
+  onClick: () => {},
 };
 
 const useStyles = makeStyles({
@@ -95,7 +97,7 @@ const useStyles = makeStyles({
 });
 
 const ButtonComponent = (props) => {
-  const { children, className, variant } = props;
+  const { children, className, variant, onClick } = props;
   const classes = useStyles();
 
   const buttonClassName = cn(classes.button, className, {
@@ -109,7 +111,7 @@ const ButtonComponent = (props) => {
   });
 
   return (
-    <Button className={buttonClassName} classes={{ label }}>
+    <Button className={buttonClassName} classes={{ label }} onClick={onClick}>
       {children}
     </Button>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
-import { Loading as Icon } from '../../icons';
+import { Loading as Icon } from '../icons';
 
 const propTypes = {
   className: PropTypes.string,

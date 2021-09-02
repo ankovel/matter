@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core';
 import Main from '../components/Main/Main';
 import FilterSelect from '../components/Journal/FilterSelect';
-import SmallArticle from '../components/Home/Explore/SmallArticle';
-import BigArticle from '../components/Home/Explore/BigArticle';
+import SmallArticle from '../components/Home/SmallArticle';
+import BigArticle from '../components/Home/BigArticle';
 import articles from '../constants/articles';
-import Loading from '../components/Main/Loading';
+import Loading from '../components/Loading';
 
 const useStyles = makeStyles({
   header: {
@@ -125,6 +125,10 @@ const useStyles = makeStyles({
 
 const JournalPage = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={classes.container}>

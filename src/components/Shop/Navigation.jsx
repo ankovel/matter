@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import RadioSize from '../Main/RadioSize';
+import RadioSize from '../RadioSize';
 import CategoriesList from './CategoriesList';
 
 const propTypes = {

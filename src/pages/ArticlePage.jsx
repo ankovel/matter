@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { Link, NavLink } from 'react-router-dom';
 import { ExpandMore } from '@material-ui/icons';
 import Main from '../components/Main/Main';
-import ProductCard from '../components/Home/ProductCard';
+import ProductCard from '../components/ProductCard';
 import products from '../constants/products';
 
 const useStyles = makeStyles({
@@ -130,6 +130,10 @@ const useStyles = makeStyles({
 
 const ArticlePage = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={classes.container}>

@@ -6,7 +6,7 @@ import ProductSlider from './ProductSlider';
 import RadioSize from './RadioSize';
 import Button from './Button';
 import Counter from './Counter';
-import Wishlist from '../Wishlist';
+import Wishlist from './Wishlist';
 
 const propTypes = {
   open: PropTypes.bool,
@@ -38,7 +38,7 @@ const useStyles = makeStyles({
   },
   slider: {
     width: '45%',
-  }, 
+  },
   info: {
     width: '53%',
   },
@@ -51,7 +51,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingBottom: '10px',
-    borderBottom: 'solid 2px #f3f3f3'
+    borderBottom: 'solid 2px #f3f3f3',
   },
   price: {
     fontSize: '24px',
@@ -73,7 +73,7 @@ const useStyles = makeStyles({
   },
   infoProduct: {
     padding: '10px 0',
-    borderBottom: 'solid 2px #f3f3f3'
+    borderBottom: 'solid 2px #f3f3f3',
   },
   description: {
     width: '52%',
@@ -99,7 +99,7 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     padding: '10px 0',
-    borderBottom: 'solid 2px #f3f3f3'
+    borderBottom: 'solid 2px #f3f3f3',
   },
   collab: {
     width: '48%',
@@ -107,7 +107,7 @@ const useStyles = makeStyles({
     color: '#666',
   },
   label: {
-    margin: '10px 0', 
+    margin: '10px 0',
     fontSize: '12px',
     letterSpacing: '1px',
     fontWeight: 'normal',
@@ -159,20 +159,18 @@ const QuickView = (props) => {
   const [like, setLike] = useState(false);
 
   const toggleLike = () => {
-    setLike(prevValue => !prevValue);
+    setLike((prevValue) => !prevValue);
   };
 
   return (
-    <Dialog
-      classes={{ paper: classes.paper }}
-      open={open}
-      onClose={onClose}
-    >
+    <Dialog classes={{ paper: classes.paper }} open={open} onClose={onClose}>
       <header className={classes.header}>The Sideswept Dhoti</header>
       <div className={classes.content}>
         <ProductSlider className={classes.slider} />
         <div className={classes.info}>
-          <h1 className={classes.title}>The Sideswept Dhoti + Bottom Line Grey (Silk)</h1>
+          <h1 className={classes.title}>
+            The Sideswept Dhoti + Bottom Line Grey (Silk)
+          </h1>
           <div className={classes.item}>
             <span className={classes.price}>SGD 139.90 </span>
             <div className={classes.rating}>
@@ -186,10 +184,14 @@ const QuickView = (props) => {
           </div>
           <div className={classes.infoProduct}>
             <h2 className={classes.description}>Description</h2>
-            <p className={classes.text}>Inspired by the continuous length of the lunghi or 
-              sarong seen in hot climates everywhere from South Asia to the Horn of Africa and southern Arabian pen… 
+            <p className={classes.text}>
+              Inspired by the continuous length of the lunghi or sarong seen in
+              hot climates everywhere from South Asia to the Horn of Africa and
+              southern Arabian pen…
             </p>
-            <button type="button" className={classes.btnMore}>SEE MORE</button>
+            <button type="button" className={classes.btnMore}>
+              SEE MORE
+            </button>
           </div>
           <div className={classes.company}>
             <h2 className={classes.description}>Artisan Employment</h2>
@@ -206,11 +208,11 @@ const QuickView = (props) => {
           <h3 className={classes.label}>size</h3>
           <div className={classes.radio}>
             <RadioSize
-                className={classes.radioSize}
-                onChange={setSelectedValue}
-                value={selectedValue}
-                label="XS"
-              />
+              className={classes.radioSize}
+              onChange={setSelectedValue}
+              value={selectedValue}
+              label="XS"
+            />
             <RadioSize
               className={classes.radioSize}
               onChange={setSelectedValue}
@@ -235,23 +237,45 @@ const QuickView = (props) => {
               value={selectedValue}
               label="XL"
             />
-            <Tooltip title={<img src="./images/size.png" alt="Size Guidelines" className={classes.tooltip} />}>
+            <Tooltip
+              title={
+                <img
+                  src="./images/size.png"
+                  alt="Size Guidelines"
+                  className={classes.tooltip}
+                />
+              }
+            >
               <span className={classes.guidelines}>Size Guidelines</span>
             </Tooltip>
           </div>
-          <p className={classes.helper}>Model is a US Size 2-4, wears Matter Size 1. 175 cm tall.</p>
+          <p className={classes.helper}>
+            Model is a US Size 2-4, wears Matter Size 1. 175 cm tall.
+          </p>
           <h3 className={classes.label}>Quantity</h3>
           <div className={classes.wrapper}>
-            <Counter className={classes.counter} value={count} onChange={setCount} />
-            <Button variant="black" className={classes.cartBtn}>Add To Cart</Button>
-            <Wishlist checked={like} onChange={toggleLike} className={classes.whitelist} />
-          </div> 
+            <Counter
+              className={classes.counter}
+              value={count}
+              onChange={setCount}
+            />
+            <Button variant="black" className={classes.cartBtn}>
+              Add To Cart
+            </Button>
+            <Wishlist
+              checked={like}
+              onChange={toggleLike}
+              className={classes.whitelist}
+            />
+          </div>
         </div>
       </div>
-      <Button variant="black" className={classes.btn}>View Full Product Details</Button>
+      <Button variant="black" className={classes.btn}>
+        View Full Product Details
+      </Button>
     </Dialog>
   );
-}
+};
 
 QuickView.propTypes = propTypes;
 QuickView.defaultProps = defaultProps;

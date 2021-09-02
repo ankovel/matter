@@ -1,7 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import { makeStyles } from '@material-ui/core';
-import Button from '../Main/Button';
+import Button from '../Button';
 
 const useStyles = makeStyles ({
   container: {

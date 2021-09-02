@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { makeStyles, Link } from '@material-ui/core';
-import Button from '../Main/Button';
+import Button from '../Button';
 import { Facebook, Twitter } from '../../icons';
 
 const useStyles = makeStyles({

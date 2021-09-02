@@ -43,7 +43,9 @@ const RadioSize = (props) => {
   };
 
   return (
-    <button className={buttonClassName} onClick={onClick} type="button">{label}</button>
+    <button className={buttonClassName} onClick={onClick} type="button">
+      {label}
+    </button>
   );
 };
 

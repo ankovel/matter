@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, Link } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core';
 
 const propTypes = {
   article: PropTypes.shape({
@@ -14,8 +15,10 @@ const propTypes = {
 
 const useStyles = makeStyles({
   info: {
-    textDecoration: 'none',
+    width: '263px',
+    height: '283px',
     borderTop: 'solid 2px #33333a',
+    textDecoration: 'none',
     color: '#33333a',
     transition: '0.4s all ease',
     '&:hover': {
@@ -25,7 +28,8 @@ const useStyles = makeStyles({
   },
   item: {
     display: 'flex',
-    marginTop: '20px',
+    marginTop: '15px',
+    marginBottom: '7px',
   },
   date: {
     fontSize: '12px',
@@ -43,40 +47,39 @@ const useStyles = makeStyles({
       bottom: '8px',
       borderRadius: '50%',
       backgroundColor: '#33333a',
-    }      
+    }          
   },
   title: {
-    marginTop: '10px',
-    fontSize: '30px',
+    height: '70px',
+    marginBottom: '10px',
+    fontSize: '24px',
     fontWeight: 'normal',
   },
   text: {
-    width: '515px',
-    marginTop: '20px',
     fontSize: '16px',
   },
   img: {
-    marginTop: '50px',
+    width: '100%',
   },
 });
 
-const BigArticle = (props) => {
+const SmallArticle = (props) => {
   const { article } = props;
-  const { title, text, date, image } = article;
+  const { title, text, date, image, id } = article;
   const classes = useStyles();
 
   return (
-    <Link href="/article" className={classes.info}>
+    <Link to={`/article/${id}`} className={classes.info}> 
       <div className={classes.item}> 
         <span className={classes.date}>{`FIELDTESTED ${' '} ${date}`}</span>
       </div>
       <h2 className={classes.title}>{title}</h2>
-      <p className={classes.text}>{text}</p>
-      <img className={classes.img} src={image} alt={title} />
+      {image && <img className={classes.img} src={image} alt={title} />}
+      {text && <p className={classes.text}>{text}</p>}
     </Link>
   )
 }
 
-BigArticle.propTypes = propTypes;
+SmallArticle.propTypes = propTypes;
 
-export default BigArticle;
+export default SmallArticle;

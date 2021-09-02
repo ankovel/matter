@@ -1,18 +1,19 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import Main from '../components/Main/Main';
 import HomeBanner from '../components/Home/HomeBanner';
-import ProductCard from '../components/Home/ProductCard';
+import ProductCard from '../components/ProductCard';
 import AboutMatter from '../components/Home/AboutMatter';
 import ShopCard from '../components/Home/ShopCard';
 import Videos from '../components/Home/Videos';
 import Magazine from '../components/Home/Magazine';
 import categories from '../constants/categories';
 import products from '../constants/products';
-import BigArticle from '../components/Home/Explore/BigArticle';
-import SmallArticle from '../components/Home/Explore/SmallArticle';
+import BigArticle from '../components/Home/BigArticle';
+import SmallArticle from '../components/Home/SmallArticle';
 import articles from '../constants/articles';
-import Button from '../components/Main/Button';
+import Button from '../components/Button';
 
 const useStyles = makeStyles({
   container: {
@@ -72,6 +73,11 @@ const useStyles = makeStyles({
 
 const HomePage = () => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const goToJournal = () => {
+    history.push('/journal');
+  };
 
   return (
     <div className={classes.container}>
@@ -112,7 +118,7 @@ const HomePage = () => {
               </div>
             )}
           </div>
-          <Button variant="black" className={classes.btn}>
+          <Button variant="black" className={classes.btn} onClick={goToJournal}>
             See the journal
           </Button>
         </Main>

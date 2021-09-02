@@ -3,10 +3,10 @@ import { makeStyles } from '@material-ui/core';
 import Main from '../components/Main/Main';
 import Banner from '../components/Shop/Banner';
 import Select from '../components/Shop/Select';
-import ProductCard from '../components/Home/ProductCard';
+import ProductCard from '../components/ProductCard';
 import products from '../constants/products';
 import Navigation from '../components/Shop/Navigation';
-import Loading from '../components/Main/Loading';
+import Loading from '../components/Loading';
 
 const useStyles = makeStyles({
   header: {

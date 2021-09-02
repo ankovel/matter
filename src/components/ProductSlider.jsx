@@ -65,25 +65,27 @@ const ProductSlider = (props) => {
     setImage(image);
 
     const elements = document.getElementsByClassName(classes.active);
-    elements[0].scrollIntoView({ block: "center", behavior: "smooth" });
+    elements[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
   };
 
   return (
     <div className={cn(classes.container, className)}>
       <div className={classes.thumbs}>
-        {images.map(image => {
+        {images.map((image) => {
           const buttonClassName = cn(classes.btn, {
             [classes.active]: image === activeImage,
           });
 
           return (
-            <button type="button" 
-              className={buttonClassName} 
-              key={image} 
-              onClick={() => handleClick(image)}>
-              <img  className={classes.image} src={image} alt={image} />
+            <button
+              type="button"
+              className={buttonClassName}
+              key={image}
+              onClick={() => handleClick(image)}
+            >
+              <img className={classes.image} src={image} alt={image} />
             </button>
-          )     
+          );
         })}
       </div>
       <div className={classes.wrapper}>

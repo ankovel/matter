@@ -10,7 +10,7 @@ const Router = () => (
     <Page path='/fabric' component={Fabric}/>
     <Page path='/journal' component={Journal}/>
     <Page path='/about' component={About}/>
-    <Page path='/article' component={Article}/>
+    <Page path='/article/:id' component={Article}/>
   </Switch>
 );
 

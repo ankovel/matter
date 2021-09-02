@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
-import QuickView from '../Main/QuickView';
+import QuickView from './QuickView';
 
 const propTypes = {
   className: PropTypes.string,
@@ -92,15 +92,17 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div className={cn(classes.card, className)}> 
+    <div className={cn(classes.card, className)}>
       {isNew && <span className={classes.new}>new</span>}
       <img className={classes.img} src={image} alt={title} />
       <h3 className={classes.title}>{title}</h3>
       <span className={classes.price}>{price}</span>
-      <button type="button" className={classes.btn} onClick={handleOpen}>QUICK VIEW</button>
+      <button type="button" className={classes.btn} onClick={handleOpen}>
+        QUICK VIEW
+      </button>
       <QuickView open={open} onClose={handleClose} />
     </div>
-  )
+  );
 };
 
 ProductCard.propTypes = propTypes;

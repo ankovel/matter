@@ -59,12 +59,21 @@ const Counter = (props) => {
 
   return (
     <div className={cn(classes.counter, className)}>
-      <button className={classes.button} onClick={handleSub} type="button" disabled={value === 0}>–</button>
+      <button
+        className={classes.button}
+        onClick={handleSub}
+        type="button"
+        disabled={value === 0}
+      >
+        –
+      </button>
       <span className={classes.value}>{value}</span>
-      <button className={classes.button} onClick={handleAdd} type="button">+</button>
+      <button className={classes.button} onClick={handleAdd} type="button">
+        +
+      </button>
     </div>
-  )
-}
+  );
+};
 
 Counter.propTypes = propTypes;
 Counter.defaultProps = defaultProps;
