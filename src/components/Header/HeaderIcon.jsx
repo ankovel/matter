@@ -31,10 +31,10 @@ const useStyles = makeStyles({
   icons: {
     width: '25px',
     height: '25px',
+    transition: '0.3s all ease',
     '&:hover': {
       transform: 'scale(1.4)',
       color: '#ff6008',
-      transition: '0.3s all ease',
     }            
   },
 });
