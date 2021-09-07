@@ -6,15 +6,17 @@ import QuickView from './QuickView';
 
 const propTypes = {
   className: PropTypes.string,
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  isNew: PropTypes.bool,
+  product: PropTypes.shape({
+    id: PropTypes.string,
+    image: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.string,
+    isNew: PropTypes.bool,
+  }).isRequired,
 };
 
 const defaultProps = {
   className: '',
-  isNew: false,
 };
 
 const useStyles = makeStyles({
@@ -79,7 +81,8 @@ const useStyles = makeStyles({
 });
 
 const ProductCard = (props) => {
-  const { className, image, title, price, isNew } = props;
+  const { className, product } = props;
+  const { id, title, image, price, isNew } = product;
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -100,7 +103,7 @@ const ProductCard = (props) => {
       <button type="button" className={classes.btn} onClick={handleOpen}>
         QUICK VIEW
       </button>
-      <QuickView open={open} onClose={handleClose} />
+      <QuickView open={open} onClose={handleClose} id={id} />
     </div>
   );
 };

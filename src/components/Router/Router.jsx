@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-import { Home, Shop, Fabric, Journal, About, Article } from '../../pages';
+import { Home, Shop, Fabric, Journal, About, Article, Product } from '../../pages';
 import Page from '../Page/Page';
 
 const Router = () => (
@@ -11,6 +11,7 @@ const Router = () => (
     <Page path='/journal' component={Journal}/>
     <Page path='/about' component={About}/>
     <Page path='/article/:id' component={Article}/>
+    <Page path='/product/:id' component={Product}/>
   </Switch>
 );
 

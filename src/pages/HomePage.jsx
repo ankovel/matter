@@ -23,24 +23,6 @@ const useStyles = makeStyles({
     backgroundColor: '#fcfcfc',
     padding: '60px 0',
   },
-  about: {
-    padding: '62px 0',
-  },
-  explore: {
-    display: 'grid',
-    padding: '60px 0',
-    backgroundColor: '#fcfcfc',
-  },
-  btn: {
-    width: '174px',
-    margin: '0 auto',
-  },
-  small: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    width: '555px',
-  },
   title: {
     marginBottom: '35px',
     textAlign: 'center',
@@ -59,6 +41,24 @@ const useStyles = makeStyles({
     '&:nth-child(-n+4)': {
       marginTop: 0,
     },
+  },
+  about: {
+    padding: '62px 0',
+  },
+  explore: {
+    display: 'grid',
+    padding: '60px 0',
+    backgroundColor: '#fcfcfc',
+  },
+  btn: {
+    width: '174px',
+    margin: '0 auto',
+  },
+  small: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    width: '555px',
   },
   shop: {
     padding: '62px 0',
@@ -90,10 +90,7 @@ const HomePage = () => {
               <ProductCard
                 key={product.id}
                 className={classes.card}
-                image={product.image}
-                title={product.title}
-                price={product.price}
-                isNew={product.isNew}
+                product={product}
               />
             ))}
           </div>

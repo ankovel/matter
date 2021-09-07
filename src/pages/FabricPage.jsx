@@ -5,12 +5,17 @@ import articles from '../constants/articles';
 import FabricArticle from '../components/Fabric/FabricArticle';
 import FabricCard from '../components/Fabric/FabricCard';
 import fabrics from '../constants/fabrics';
+import FabricMap from '../components/Fabric/FabricMap';
 
 const useStyles = makeStyles({
   container: {
     padding: '65px 0',
   },
-  fabrics: {},
+  fabrics: {
+    display: 'flex',
+    height: '560px',
+    marginBottom: '67px',
+  },
   title: {
     textAlign: 'center',
     fontSize: '60px',
@@ -19,12 +24,11 @@ const useStyles = makeStyles({
     boxShadow: 'rgb(0 0 0 / 0%) 0px 14px 28px, rgb(0 0 0 / 7%) 0px 10px 10px',
   },
   card: {
-    width: '35%',
-    height: '560px',
+    width: '43%',
     overflowY: 'scroll',
     padding: '20px 20px 10px 90px',
     backgroundImage:
-      'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.03) 10%)',
+      'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.03) 50%)',
     '&::-webkit-scrollbar': {
       webkitAppearance: 'none',
       width: '7px',
@@ -54,13 +58,14 @@ const FabricPage = () => {
 
   return (
     <div className={classes.container}>
+      <h1 className={classes.title}>Our Techniques</h1>
       <div className={classes.fabrics}>
-        <h1 className={classes.title}>Our Techniques</h1>
         <div className={classes.card}>
           {fabrics.map((fabric) => (
             <FabricCard key={fabric.id} fabric={fabric} />
           ))}
         </div>
+        <FabricMap />
       </div>
       <Main>
         <h2 className={classes.explore}>Explore</h2>

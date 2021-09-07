@@ -220,10 +220,7 @@ const ArticlePage = () => {
               <ProductCard
                 key={product.id}
                 className={classes.card}
-                image={product.image}
-                title={product.title}
-                price={product.price}
-                isNew={product.isNew}
+                product={product}
               />
             ))}
           </div>

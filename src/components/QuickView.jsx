@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, Dialog, Tooltip } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import { Rating } from '@material-ui/lab';
 import ProductSlider from './ProductSlider';
 import RadioSize from './RadioSize';
@@ -11,6 +12,7 @@ import Wishlist from './Wishlist';
 const propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 const defaultProps = {
@@ -152,11 +154,16 @@ const useStyles = makeStyles({
 });
 
 const QuickView = (props) => {
-  const { open, onClose } = props;
+  const { open, onClose, id } = props;
   const classes = useStyles();
+  const history = useHistory();
   const [count, setCount] = useState(1);
   const [selectedValue, setSelectedValue] = useState('XS');
   const [like, setLike] = useState(false);
+
+  const goToProduct = () => {
+    history.push(`/product/${id}`);
+  };
 
   const toggleLike = () => {
     setLike((prevValue) => !prevValue);
@@ -270,7 +277,7 @@ const QuickView = (props) => {
           </div>
         </div>
       </div>
-      <Button variant="black" className={classes.btn}>
+      <Button variant="black" className={classes.btn} onClick={goToProduct}>
         View Full Product Details
       </Button>
     </Dialog>
