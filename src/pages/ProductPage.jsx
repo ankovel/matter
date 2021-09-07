@@ -1,10 +1,39 @@
 import React from 'react';
 import { makeStyles, Link } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
+import { ExpandMore } from '@material-ui/icons';
 import Main from '../components/Main/Main';
 import ProductCard from '../components/ProductCard';
 import products from '../constants/products';
+import Product from '../components/Product';
 
 const useStyles = makeStyles({
+  header: {
+    padding: '20px 0',
+    boxShadow: 'rgb(0 0 0 / 3%) 0px 14px 28px, rgb(0 0 0 / 3%) 0px 10px 10px',
+  },
+  categories: {
+    display: 'flex',
+  },
+  navLink: {
+    display: 'flex',
+    alignItems: 'center',
+    textDecoration: 'none',
+    color: '#33333a',
+    '&:hover': {
+      color: '#ff6008',
+    },
+  },
+  arrow: {
+    marginRight: '5px',
+    fontSize: '20px',
+    transform: 'rotate(-90deg)',
+  },
+  comeback: {
+    fontSize: '18px',
+    fontWeight: 'normal',
+    letterSpacing: '1px',
+  },
   info: {
     padding: '60px 0 80px',
   },
@@ -91,6 +120,24 @@ const ProductPage = () => {
 
   return (
     <div className={classes.container}>
+      <div className={classes.header}>
+        <Main>
+          <div className={classes.categories}>
+            <NavLink to="/shop" className={classes.navLink}>
+              <p className={classes.comeback}>Women</p>
+              <ExpandMore className={classes.arrow} />
+            </NavLink>
+            <NavLink to="/shop" className={classes.navLink}>
+              <p className={classes.comeback}>Pants</p>
+              <ExpandMore className={classes.arrow} />
+            </NavLink>
+            <NavLink to="/shop" className={classes.navLink}>
+              <p className={classes.comeback}> The Sideswept Dhoti</p>
+            </NavLink>
+          </div>
+        </Main>
+      </div>
+      <Product />
       <div className={classes.info}>
         <img src="/matter/images/productImage.png" alt="productImage" />
         <div className={classes.description}>
