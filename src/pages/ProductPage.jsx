@@ -2,10 +2,12 @@ import React from 'react';
 import { makeStyles, Link } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import { ExpandMore } from '@material-ui/icons';
+import { Rating } from '@material-ui/lab';
 import Main from '../components/Main/Main';
 import ProductCard from '../components/ProductCard';
 import products from '../constants/products';
 import Product from '../components/Product';
+import Button from '../components/Button';
 
 const useStyles = makeStyles({
   header: {
@@ -97,6 +99,60 @@ const useStyles = makeStyles({
       transform: 'scale(1.05)',
       color: '#ff6008',
     },
+  },
+  feedBack: {
+    padding: '60px 0',
+    backgroundColor: '#fcfcfc',
+  },
+  writeReview: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  textThoughts: {
+    fontSize: '12px',
+    color: '#666',
+  },
+  cartBtn: {
+    width: '170px',
+    marginLeft: '20px',
+  },
+  reviews: {
+    width: '52%',
+    margin: '0 auto',
+  },
+  textReviews: {
+    marginTop: '15px',
+    fontSize: '16px',
+  },
+  ratingWrapper: {
+    marginBottom: '15px',
+  },
+  rating: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  ratingStars: {
+    marginRight: '10px',
+    fontSize: '25px',
+    color: '#ff6008',
+  },
+  ratingNumb: {
+    fontSize: '16px',
+    color: '#666',
+  },
+  userName: {
+    fontSize: '16px',
+  },
+  date: {
+    color: '#666',
+  },
+  moreReviews: {
+    fontSize: '12px',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+    cursor: 'pointer',
+    color: '#ff5e1b',
   },
   products: {
     padding: '60px 0',
@@ -243,6 +299,59 @@ const ProductPage = () => {
             </Link>
           </div>
         </Main>
+      </div>
+      <div className={classes.feedBack}>
+        <h1 className={classes.title}>Customer Reviews</h1>
+        <div className={classes.reviews}>
+          <div className={classes.writeReview}>
+            <p className={classes.textThoughts}>
+              Share your thoughts with other customers
+            </p>
+            <Button variant="black" className={classes.cartBtn}>
+              WRITE A REVIEW
+            </Button>
+          </div>
+          <div className={classes.ratingWrapper}>
+            <div className={classes.rating}>
+              <Rating
+                className={classes.ratingStars}
+                defaultValue={1}
+                precision={0.5}
+              />
+              <span className={classes.ratingNumb}>4.8 of 5</span>
+            </div>
+            <p className={classes.textReviews}>Top Customers Reviews</p>
+          </div>
+          <div className={classes.ratingWrapper}>
+            <div className={classes.rating}>
+              <Rating
+                className={classes.ratingStars}
+                defaultValue={1}
+                precision={0.5}
+              />
+              <span className={classes.ratingNumb}>4.8 of 5</span>
+            </div>
+            <p className={classes.userName}>
+              Customer Name{' '}
+              <span className={classes.date}>on February 18, 2017</span>
+            </p>
+            <p className={classes.textReviews}>
+              Millions of Americans turn to Lasik Surgery when their vision is
+              less than perfect and they’re tired of being tied down to wearing
+              glasses or contacts. What part of the eye is it that may be
+              causing all your vision trouble? Your cornea! When the shape of
+              your cornea is irregular, the image on your retina is blurry and
+              out-of-focus. The cornea is a part of your eye that works to focus
+              light and projects an image on the retina. This focusing of light
+              is called refraction. The 3 main types of refractive errors are
+              myopia (nearsightedness), hyperopia (farsightedness) and
+              astigmatism.
+            </p>
+          </div>
+          <Link className={classes.moreReviews} to="/">
+            Show more reviews
+          </Link>
+        </div>
       </div>
       <div className={classes.products}>
         <Main>

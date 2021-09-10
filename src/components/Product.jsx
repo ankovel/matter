@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles, Tooltip } from '@material-ui/core';
+import cn from 'classnames';
+import {
+  makeStyles,
+  Tooltip,
+  Link,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from '@material-ui/core';
+import { Add } from '@material-ui/icons';
 import { Rating } from '@material-ui/lab';
+import { Facebook, Twitter } from '../icons';
 import ProductSlider from './ProductSlider';
 import RadioSize from './RadioSize';
 import Button from './Button';
@@ -9,20 +19,53 @@ import Wishlist from './Wishlist';
 import Main from './Main/Main';
 
 const useStyles = makeStyles({
-  paper: {
+  content: {
+    display: 'flex',
+    height: 'calc(100% - 108px)',
+    justifyContent: 'space-between',
+    paddingTop: '40px',
+  },
+  sliderWrapper: {
     margin: 0,
     maxWidth: '70%',
     height: '100%',
     overflow: 'hidden',
   },
-  content: {
-    display: 'flex',
-    height: 'calc(100% - 108px)',
-    justifyContent: 'space-between',
-    padding: '16px 24px 24px',
-  },
   slider: {
-    width: '45%',
+    width: '94%',
+  },
+  share: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '15px',
+  },
+  textShare: {
+    marginRight: '10px',
+    fontSize: '16px',
+    color: '#666',
+  },
+  icon: {
+    padding: '5px',
+    borderRadius: '50%',
+    backgroundColor: '#d6d6d6',
+    color: '#33333a',
+  },
+  fb: {
+    marginRight: '15px',
+    transition: '0.4s all ease',
+    '&:hover': {
+      transform: 'scale(1.5)',
+      backgroundColor: 'transparent',
+      color: '#4867aa',
+    },
+  },
+  tw: {
+    '&:hover': {
+      transform: 'scale(1.5)',
+      backgroundColor: 'transparent',
+      color: '#28a9e0',
+      transition: '0.4s all ease',
+    },
   },
   info: {
     width: '53%',
@@ -134,6 +177,16 @@ const useStyles = makeStyles({
     width: '302px',
     margin: '0 auto',
   },
+  features: {
+    marginTop: '20px',
+  },
+  root: {
+    padding: 0,
+  },
+  subRoot: {
+    flexDirection: 'column',
+    padding: 0,
+  },
 });
 
 const Product = () => {
@@ -153,7 +206,27 @@ const Product = () => {
   return (
     <Main>
       <div className={classes.content}>
-        <ProductSlider className={classes.slider} />
+        <div className={classes.sliderWrapper}>
+          <ProductSlider className={classes.slider} />
+          <div className={classes.share}>
+            <p className={classes.textShare}>Share this product</p>
+            <Link
+              href="https://www.facebook.com"
+              target="_blank"
+              className={classes.icons}
+            >
+              <Facebook className={cn(classes.icon, classes.fb)} />
+            </Link>
+
+            <Link
+              href="https://twitter.com/"
+              target="_blank"
+              className={classes.icons}
+            >
+              <Twitter className={cn(classes.icon, classes.tw)} />
+            </Link>
+          </div>
+        </div>
         <div className={classes.info}>
           <h1 className={classes.title}>
             The Sideswept Dhoti + Bottom Line Grey (Silk)
@@ -255,6 +328,53 @@ const Product = () => {
               className={classes.whitelist}
             />
           </div>
+          <Accordion className={classes.features}>
+            <AccordionSummary
+              className={classes.summary}
+              classes={{ root: classes.root }}
+              expandIcon={<Add className={classes.icon} />}
+            >
+              <h3>Features</h3>
+            </AccordionSummary>
+            <AccordionDetails classes={{ root: classes.subRoot }}>
+              <p>
+                Gently curved waistband
+                <br />
+                Long self fabric waist belt
+                <br />
+                Seamless side profile
+                <br />
+                Back welt pocket with button
+              </p>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion className={classes.fabrics}>
+            <AccordionSummary
+              classes={{ root: classes.root }}
+              expandIcon={<Add className={classes.icon} />}
+            >
+              <h3>Fabric Care</h3>
+            </AccordionSummary>
+            <AccordionDetails classes={{ root: classes.subRoot }}>
+              <div>
+                <h4>Fabric Notes</h4>
+                <p>
+                  Hand block printed with azo-free dyes. 90% Cotton 10% linen.
+                </p>
+              </div>
+              <div>
+                <h4>Care Instructions</h4>
+                <p>
+                  Keep this garment separate in the first few washes to prevent
+                  colour runs. When washed garment runs clear, you can throw it
+                  into the machine with other like-coloured clothing. Always use
+                  delicate machine wash with cold water, or handwash cold for
+                  best results. Do not tumble dry. Line dry inside out. Iron
+                  inside out using a low-temperature setting.
+                </p>
+              </div>
+            </AccordionDetails>
+          </Accordion>
         </div>
       </div>
     </Main>
